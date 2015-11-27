@@ -2,7 +2,6 @@ function Instrument( args ){
 	this.id = args.id || null;
 	this.path = args.path || null;
 	this.buffer = args.buffer || null;
-	this.sequence = args.sequence || [];
 }
 
 Instrument.prototype.loadBuffer = function(){
