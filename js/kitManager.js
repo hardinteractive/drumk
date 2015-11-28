@@ -17,7 +17,7 @@ var KitManager = {
 
 		//construct Instruments
 		for( var i = 0; i < kit.length; i++ ){
-			this.instruments.push( new Instrument(kit[i]) );
+			this.instruments.push( new Instrument( kit[i]) );
 			this.instruments[i].loadBuffer();
 		}
 	},

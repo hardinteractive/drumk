@@ -9,3 +9,37 @@ html, body {
 	margin: 0 auto;
 	width: 600px;
 }
+
+.section {
+	border: 1px solid black;
+	padding: 10px 20px;
+	margin: 10px 0;
+	position: static;
+	overflow: hidden;
+}
+
+.left {
+	float: left;
+	width: 20%;
+	height: 100%;
+}
+
+.right {
+	float: right;
+	width: 80%;
+	height: 100%;
+	text-align: left;
+}
+
+.section_name {
+
+}
+
+.instrument_name {
+	margin: 0;
+	padding: 0;
+}
+
+.beat {
+
+}

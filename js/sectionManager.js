@@ -2,6 +2,7 @@ var SectionManager = {
 	sections: [],
 	add: function(beats){
 		this.sections.push( new Section({}) );
+		ViewInterface.buildSections();
 		console.log( this.sections );
 	},
 	delete: function(id){

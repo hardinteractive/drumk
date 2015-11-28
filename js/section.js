@@ -1,4 +1,5 @@
 function Section( args ){
+	this.name = args.name || 'No Name';
 	this.totalBeats = args.totalBeats || 8;
 	this.beatSequences = args.beatSequences || [];
 	this.populate();
