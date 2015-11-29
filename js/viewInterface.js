@@ -22,7 +22,11 @@ var ViewInterface = {
 
 				//build checkbox inputs for each beat of each instrument
 				for( var k = 0; k < SectionManager.sections[i].beatSequences[j].sequence.length; k++ ){
-					domString += '<input class="beat" data-section="'+i+'" data-sequence="'+j+'" data-beat="'+k+'" type="checkbox" onclick="changeBeat(event)">';
+
+					//create all checkboxes.
+					//element id is a cryptic id for quick grab of a particular beat element.
+					//more human friendly data is stored in data-section, data-sequence, and data-beat attributes. This also removes the need to parse the ID for meta info.
+					domString += '<input class="beat" id="sec'+i+'seq'+j+'b'+k+'" data-section="'+i+'" data-sequence="'+j+'" data-beat="'+k+'" type="checkbox" onclick="changeBeat(event)">';
 				}
 
 				//close div
@@ -35,5 +39,16 @@ var ViewInterface = {
 
 		//inject the dom string
 		document.getElementById('section_container').innerHTML = domString;
+		ViewInterface.syncWithModel();
+	},
+	syncWithModel: function(){
+		//loops through all sections > instruments > beats and then syncs the view's checkboxes with the model.
+		for( var i = 0; i < SectionManager.sections.length; i++ ){
+			for( var j = 0; j < SectionManager.sections[i].beatSequences.length; j++ ){
+				for( var k = 0; k < SectionManager.sections[i].beatSequences[j].sequence.length; k++ ){
+					document.getElementById('sec'+i+'seq'+j+'b'+k).checked = SectionManager.sections[i].beatSequences[j].sequence[k].beat;
+				}
+			}
+		}
 	}
 };
