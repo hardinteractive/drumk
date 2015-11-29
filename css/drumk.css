@@ -18,21 +18,18 @@ html, body {
 	overflow: hidden;
 }
 
-.left {
-	float: left;
-	width: 20%;
-	height: 100%;
-}
 
-.right {
-	float: right;
+.instrument_container {
+	float: left;
 	width: 80%;
 	height: 100%;
 	text-align: left;
 }
 
-.section_name {
-
+.section_controls {
+	width: 20%;
+	float: left;
+	height: 100%;
 }
 
 .instrument_name {

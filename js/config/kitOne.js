@@ -10,7 +10,7 @@ var kitOne = {
 		},
 		{
 			id: 'hihat',
-			path: 'soundbank/hihat/A_HAT_1.wav'
+			path: 'soundbank/hihat/C_HAT_2.wav'
 		}
 	]
 };

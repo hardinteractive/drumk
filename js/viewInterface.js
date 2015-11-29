@@ -9,13 +9,9 @@ var ViewInterface = {
 			//open section div
 			domString += '<div class="section">';
 
-			//name of the section
-			domString += '<div class="left"><h5 class="section_name">'+SectionManager.sections[i].name+'</h5></div>';
-
+			domString += '<div class="instrument_container">';
 			//inject beats of all instruments of this section
 			for( var j = 0; j < SectionManager.sections[i].beatSequences.length; j++ ){
-				//open div
-				domString += '<div class="right">';
 				
 				//instrument name
 				domString += '<h6 class="instrument_name">'+SectionManager.sections[i].beatSequences[j].instrumentId+'</h6>';
@@ -29,9 +25,12 @@ var ViewInterface = {
 					domString += '<input class="beat" id="sec'+i+'seq'+j+'b'+k+'" data-section="'+i+'" data-sequence="'+j+'" data-beat="'+k+'" type="checkbox" onclick="changeBeat(event)">';
 				}
 
-				//close div
-				domString += '</div>';
 			}
+			//close div
+			domString += '</div>';
+
+			//section controls
+			domString += '<div class="section_controls"><h5 class="section_name">'+SectionManager.sections[i].name+'</h5><input type="button" value="Delete" onclick="deleteSection('+SectionManager.sections[i].id+')"></div>';
 
 			//close section div
 			domString += '</div>';

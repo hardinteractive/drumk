@@ -4,6 +4,10 @@ function addSection(){
 	SectionManager.add();
 }
 
+function deleteSection(id){
+	SectionManager.delete(id);
+}
+
 function play(){
 	Playback.play();
 }
