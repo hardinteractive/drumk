@@ -21,3 +21,7 @@ function changeBeat(event){
 	SectionManager.sections[ data.section ].beatSequences[ data.sequence ].sequence[ data.beat ].beat = !SectionManager.sections[ data.section ].beatSequences[ data.sequence ].sequence[ data.beat ].beat;
 
 }
+
+function changeTempo(event){
+	Playback.timing.tempo = event.target.valueAsNumber;
+}
