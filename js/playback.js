@@ -29,7 +29,7 @@ var Playback = {
 		Playback.timing.nextBeatTime += 0.25 * secondsPerBeat;
 
 		//if currBeat is the last beat of the section, reset the beat counter to 0 and move to the next section.
-		if( ++Playback.timing.currBeat === 8 ){
+		if( ++Playback.timing.currBeat === SectionManager.sections[ Playback.timing.currSection ].totalBeats ){
 			Playback.timing.currBeat = 0;
 			//advance to the next section, if it's the last section then move back to first section
 			if( ++Playback.timing.currSection >= SectionManager.sections.length ){

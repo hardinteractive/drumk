@@ -1,7 +1,7 @@
 function Section( args ){
 	this.id = args.id;
 	this.name = args.name || 'No Name';
-	this.totalBeats = args.totalBeats || 8;
+	this.totalBeats = args.totalBeats || 16;
 	this.beatSequences = args.beatSequences || [];
 	this.populate();
 }
@@ -22,5 +22,14 @@ Section.prototype.populate = function(){
 				beat: false
 			});
 		}
+	}
+};
+
+Section.prototype.updateTotalBeats = function(value){
+	if( value > 4 && value < 16 ){
+		this.totalBeats = value;
+		return true;
+	} else {
+		return false;
 	}
 };

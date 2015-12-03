@@ -26,6 +26,22 @@ function changeBeat(event){
 
 }
 
+function updateTotalBeats(event, id){
+	var domString = '';
+	//if update is successful, rebuild particular sequence DOM
+	if( SectionManager.getSectionById( id ).updateTotalBeats( event.target.valueAsNumber )){
+		
+		//build DOM for just this sequence.
+		domString = ViewInterface.buildSequence(id);
+		
+		//if non-empty, replace instrument sequences with new DOM.
+		if( domString ){
+			document.getElementById('instruments_'+id).innerHTML = domString;
+		}
+	}
+
+}
+
 function changeTempo(event){
 	Playback.timing.tempo = event.target.valueAsNumber;
 }
