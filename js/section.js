@@ -1,8 +1,19 @@
 function Section( args ){
+	
 	this.id = args.id;
 	this.name = args.name || 'No Name';
+	
+	//number of beats per sequence, can range from 4 to 16
 	this.totalBeats = args.totalBeats || 16;
+
+	//per-instrument sequence
 	this.beatSequences = args.beatSequences || [];
+	
+	//multiplies the global tempo for this section only.
+	//allows for easy sequencing of half time, double time, triplet time, etc.
+	this.tempoModifier = args.tempoModifier || 1.0;
+	
+
 	this.populate();
 }
 
@@ -32,4 +43,9 @@ Section.prototype.updateTotalBeats = function(value){
 	} else {
 		return false;
 	}
+};
+
+Section.prototype.setTempoModifier = function(rate){
+	console.log('rate:', rate);
+	this.tempoModifier = rate;
 };

@@ -23,7 +23,8 @@ var Playback = {
 		}
 	},
 	advanceNote: function(){
-		var secondsPerBeat = 60 / Playback.timing.tempo;
+		//	60 / (global tempo * Section.tempoModifer)
+		var secondsPerBeat = 60 / (Playback.timing.tempo * SectionManager.sections[ Playback.timing.currSection ].tempoModifier);
 
 		//advance beat by a quarter note.
 		Playback.timing.nextBeatTime += 0.25 * secondsPerBeat;

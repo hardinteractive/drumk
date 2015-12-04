@@ -23,6 +23,11 @@ var ViewInterface = {
 			+'<h5 class="section_name">'+SectionManager.sections[i].name+'</h5>'
 			+'<input type="button" value="Delete" onclick="deleteSection('+SectionManager.sections[i].id+')">'
 			+'<input type="number" value="'+SectionManager.sections[i].totalBeats+'" min="4" max="16" oninput="updateTotalBeats(event,'+SectionManager.sections[i].id+')">'
+			+'<input type="button" value="0.5" onclick="tempoModify('+SectionManager.sections[i].id+', 0.5)" >'
+			+'<input type="button" value="0.75" onclick="tempoModify('+SectionManager.sections[i].id+', 0.75)" >'
+			+'<input type="button" value="1.0" onclick="tempoModify('+SectionManager.sections[i].id+', 1.0)" >'
+			+'<input type="button" value="1.5" onclick="tempoModify('+SectionManager.sections[i].id+', 1.5)" >'
+			+'<input type="button" value="2.0" onclick="tempoModify('+SectionManager.sections[i].id+', 2.0)" >'
 			+'</div>';
 
 			//close section div

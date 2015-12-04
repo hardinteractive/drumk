@@ -43,6 +43,12 @@ function updateTotalBeats(event, id){
 
 }
 
+//changes the overall "global" tempo / BPM.
 function changeTempo(event){
 	Playback.timing.tempo = event.target.valueAsNumber;
+}
+
+//modifies the temp of THIS SECTION, factor of global BPM.
+function tempoModify( sectionId, modifier ){
+	SectionManager.getSectionById(sectionId).setTempoModifier(modifier);
 }
