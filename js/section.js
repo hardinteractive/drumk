@@ -26,7 +26,7 @@ Section.prototype.populate = function(){
 };
 
 Section.prototype.updateTotalBeats = function(value){
-	if( value > 4 && value < 16 ){
+	if( value >= 4 && value <= 16 ){
 		this.totalBeats = value;
 		return true;
 	} else {

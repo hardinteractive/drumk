@@ -16,13 +16,13 @@ function play(){
 function changeBeat(event){
 	var beat = null;
 	var data = {
-		beat: event.target.dataset.beat,
-		section: event.target.dataset.section,
-		sequence: event.target.dataset.sequence
+		beat: parseInt(event.target.dataset.beat, 10),
+		section: parseInt(event.target.dataset.section, 10),
+		sequence: parseInt(event.target.dataset.sequence, 10 )
 	};
 
 	//toggle beat value true/false.
-	SectionManager.sections[ data.section ].beatSequences[ data.sequence ].sequence[ data.beat ].beat = !SectionManager.sections[ data.section ].beatSequences[ data.sequence ].sequence[ data.beat ].beat;
+	SectionManager.getSectionById(data.section).beatSequences[ data.sequence ].sequence[ data.beat ].beat = !SectionManager.getSectionById(data.section).beatSequences[ data.sequence ].sequence[ data.beat ].beat;
 
 }
 
@@ -37,6 +37,7 @@ function updateTotalBeats(event, id){
 		//if non-empty, replace instrument sequences with new DOM.
 		if( domString ){
 			document.getElementById('instruments_'+id).innerHTML = domString;
+			ViewInterface.syncWithModel();
 		}
 	}
 

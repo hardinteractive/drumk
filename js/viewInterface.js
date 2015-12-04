@@ -65,7 +65,7 @@ var ViewInterface = {
 		for( var i = 0; i < SectionManager.sections.length; i++ ){
 			for( var j = 0; j < SectionManager.sections[i].beatSequences.length; j++ ){
 				for( var k = 0; k < SectionManager.sections[i].totalBeats; k++ ){
-					document.getElementById('sec'+i+'seq'+j+'b'+k).checked = SectionManager.sections[i].beatSequences[j].sequence[k].beat;
+					document.getElementById('sec'+SectionManager.sections[i].id+'seq'+j+'b'+k).checked = SectionManager.sections[i].beatSequences[j].sequence[k].beat;
 				}
 			}
 		}
